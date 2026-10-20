@@ -136,7 +136,7 @@ body.menu-open .mmenu{opacity:1;pointer-events:auto}
 .chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.4vw,20px)}
 .card{grid-column:span 4;cursor:pointer;text-align:left;display:block;width:100%}
-.card.wide{grid-column:span 8}
+.card.wide{grid-column:span 8;grid-row:span 2}
 .card.half{grid-column:span 6}
 .card.hide{display:none}
 .thumb{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/10;background:var(--bg-3)}
@@ -196,14 +196,14 @@ body.menu-open .mmenu{opacity:1;pointer-events:auto}
 .step.key{background:var(--rec);border-color:var(--rec);color:#fff}
 .step.key .n{color:rgba(255,255,255,.7)}
 .step.key p{color:rgba(255,255,255,.88)}
-.step .badge{position:absolute;top:24px;right:20px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.2);padding:5px 9px;border-radius:999px}
+.step .badge{align-self:flex-start;margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.2);padding:5px 9px;border-radius:999px}
 .quote-line{margin-top:clamp(48px,6vw,80px);font-size:clamp(24px,2.6vw,38px);letter-spacing:-.03em;line-height:1.2;max-width:28ch;font-weight:500}
 .quote-line em{font-family:var(--serif);font-weight:400;color:var(--ink-2)}
 
 /* Pricing */
 .price-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px);align-items:end;margin-bottom:clamp(40px,5vw,64px)}
 .range{font-size:clamp(56px,9vw,148px);font-weight:600;letter-spacing:-.055em;line-height:.9}
-.range small{display:block;font-size:15px;letter-spacing:0;font-weight:500;color:var(--ink-2);margin-top:18px}
+.range small{display:block;line-height:1.5;max-width:44ch;font-size:15px;letter-spacing:0;font-weight:500;color:var(--ink-2);margin-top:18px}
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .plan{border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;display:flex;flex-direction:column;gap:14px;background:var(--bg-2)}
 .plan .from{font-size:13px;color:var(--ink-2)}
@@ -240,7 +240,7 @@ body.menu-open .mmenu{opacity:1;pointer-events:auto}
 .vt .thumb{aspect-ratio:4/5}
 
 /* Photos */
-.photos{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(120px,13vw,190px);gap:clamp(10px,1.2vw,16px)}
+.photos{display:grid;grid-auto-flow:dense;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(120px,13vw,190px);gap:clamp(10px,1.2vw,16px)}
 .ph{border-radius:var(--r-sm);overflow:hidden;position:relative;background:var(--bg-3)}
 .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .ph:hover img{transform:scale(1.05)}
@@ -248,7 +248,7 @@ body.menu-open .mmenu{opacity:1;pointer-events:auto}
 .ph:hover figcaption{opacity:1;transform:none}
 .p1{grid-column:span 5;grid-row:span 2}.p2{grid-column:span 4;grid-row:span 2}.p3{grid-column:span 3;grid-row:span 3}
 .p4{grid-column:span 3;grid-row:span 2}.p5{grid-column:span 6;grid-row:span 2}
-.p6{grid-column:span 3;grid-row:span 2}.p7{grid-column:span 4;grid-row:span 2}.p8{grid-column:span 5;grid-row:span 2}
+.p6{grid-column:span 3;grid-row:span 3}.p7{grid-column:span 4;grid-row:span 2}.p8{grid-column:span 5;grid-row:span 2}
 
 /* Reach */
 .reach{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
@@ -286,8 +286,8 @@ form{background:var(--bg-2);border:1px solid var(--line);border-radius:var(--r);
 .f input,.f textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:var(--r-sm);padding:14px 16px;color:var(--ink);font:inherit;font-size:16px;transition:border-color .2s}
 .f input:focus,.f textarea:focus{outline:none;border-color:var(--rec)}
 .f textarea{min-height:120px;resize:vertical}
-.opts{display:flex;flex-wrap:wrap;gap:8px}
-.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts{display:flex;flex-wrap:wrap;gap:8px;position:relative}
+.opts input{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none}
 .opts label{margin:0;height:38px;padding:0 15px;display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;font-size:14px;font-weight:500;color:var(--ink-2);cursor:pointer;transition:all .2s}
 .opts input:checked+label{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .opts input:focus-visible+label{outline:2px solid var(--rec);outline-offset:2px}
@@ -330,7 +330,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;color:var(--ink-2);f
   .step{min-height:220px}
   .step:last-child{grid-column:span 2}
   .card{grid-column:span 6}
-  .card.wide{grid-column:span 12}
+  .card.wide{grid-column:span 12;grid-row:auto}
   .card.wide .thumb{aspect-ratio:16/9;flex:none}
   .vt .grid .card{grid-column:span 6}
   .foot{grid-template-columns:1fr 1fr}
@@ -350,7 +350,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;color:var(--ink-2);f
   .svc-row .ar{grid-row:1;grid-column:3;width:36px;height:36px}
   .kpis{grid-template-columns:repeat(2,auto)}
   .photos{grid-template-columns:repeat(6,1fr);grid-auto-rows:120px}
-  .p1,.p5{grid-column:span 6;grid-row:span 2}.p2,.p4,.p6,.p7{grid-column:span 3;grid-row:span 2}.p3{grid-column:span 3;grid-row:span 4}.p8{grid-column:span 3;grid-row:span 2}
+  .p1,.p5{grid-column:span 6;grid-row:span 2}.p2,.p4,.p7,.p8{grid-column:span 3;grid-row:span 2}.p3,.p6{grid-column:span 3;grid-row:span 4}
   .row2{grid-template-columns:1fr}
   details p{padding-right:0}
   .mbar{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:40;background:rgba(20,20,18,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:999px;padding:6px;transform:translateY(140%);transition:transform .5s var(--ease)}
@@ -597,7 +597,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;color:var(--ink-2);f
       <p class="lead rv d2" style="max-width:38ch">Fertig in 24 Stunden bis 15 Tagen – in allen Formaten, die du für Website und Social Media brauchst.</p>
     </div>
     <div class="steps">
-      <div class="step key rv"><span class="badge">Wichtigster Schritt</span><span class="n">01</span><h3>Vorgespräch</h3><p>Ziel, Zielgruppe, Kanäle, realistisches Budget. Hier entscheidet sich, ob der Film am Ende funktioniert.</p></div>
+      <div class="step key rv"><span class="n">01</span><span class="badge">Wichtigster Schritt</span><h3>Vorgespräch</h3><p>Ziel, Zielgruppe, Kanäle, realistisches Budget. Hier entscheidet sich, ob der Film am Ende funktioniert.</p></div>
       <div class="step rv d1"><span class="n">02</span><h3>Festpreis &amp; Konzept</h3><p>Klar aufgeschlüsseltes Angebot – Drehtage, Schnitt, Anfahrt. Keine versteckten Posten.</p></div>
       <div class="step rv d2"><span class="n">03</span><h3>Drehplanung</h3><p>Ablauf, Orte, Interviewpartner. Bei Events stimme ich mich direkt mit Regie oder Agentur ab.</p></div>
       <div class="step rv d3"><span class="n">04</span><h3>Dreh</h3><p>Allein oder mit Team aus Kamera, Ton und Licht. Interviews führe ich selbst.</p></div>
@@ -688,9 +688,9 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;color:var(--ink-2);f
       <figure class="ph p3 rv d2"><img src="https://i0.wp.com/jonackfilm.com/wp-content/uploads/2026/04/Eventfotograf-Berlin-9-von-90.jpg?w=700&ssl=1" alt="Produktfoto am Messestand" loading="lazy"><figcaption>Produkt · Fanttik</figcaption></figure>
       <figure class="ph p4 rv"><img src="https://i0.wp.com/jonackfilm.com/wp-content/uploads/2025/02/Martin-Wernicke-1385.jpg?w=700&ssl=1" alt="Porträtfoto im Studio" loading="lazy"><figcaption>Porträt</figcaption></figure>
       <figure class="ph p5 rv d1"><img src="https://i0.wp.com/jonackfilm.com/wp-content/uploads/2022/09/DJI_0048.jpg?w=1100&ssl=1" alt="Drohnenfoto Island" loading="lazy"><figcaption>Reise · Island</figcaption></figure>
-      <figure class="ph p6 rv"><img src="https://i0.wp.com/jonackfilm.com/wp-content/uploads/2026/02/Videograf-Berlin-JonackFilm-37-1.jpg?w=800&ssl=1" alt="Interview-Setup beim Dreh" loading="lazy"><figcaption>Making-of · Interview</figcaption></figure>
+      <figure class="ph p6 rv"><img src="https://i0.wp.com/jonackfilm.com/wp-content/uploads/2025/01/Fotograf-aus-Berlin-189.jpg?w=700&ssl=1" alt="Industriefotografie: Höhenretter an der Leiter" loading="lazy"><figcaption>Industrie</figcaption></figure>
       <figure class="ph p7 rv d1"><img src="https://i0.wp.com/jonackfilm.com/wp-content/uploads/2026/04/Eventfotograf-Berlin-58-von-90.jpg?w=900&ssl=1" alt="Porträt auf einem Firmenevent" loading="lazy"><figcaption>Event · Porträt</figcaption></figure>
-      <figure class="ph p8 rv d2"><img src="https://i0.wp.com/jonackfilm.com/wp-content/uploads/2025/01/Fotograf-aus-Berlin-64.jpg?w=1000&ssl=1" alt="Industriefotografie in Schutzausrüstung" loading="lazy"><figcaption>Industrie</figcaption></figure>
+      <figure class="ph p8 rv d2"><img src="https://i0.wp.com/jonackfilm.com/wp-content/uploads/2026/02/Videograf-Berlin-JonackFilm-37-1.jpg?w=1000&ssl=1" alt="Interview-Setup beim Dreh" loading="lazy"><figcaption>Making-of · Interview</figcaption></figure>
     </div>
   </div>
 </section>
@@ -831,8 +831,7 @@ const WORK = [
   {id:'uK4RW4I7xBQ', t:'Scape X', s:'Erklärvideo', c:'image', y:'Explainer', cat:'Erklärvideo'},
   {id:'Fqrxv_nHsLw', t:'Kokoro Aikido', s:'Werbefilm', c:'image', y:'Ad', cat:'Werbung'},
   {id:'BwhwGwvUs7U', t:'Interview-Produktion', s:'Experten am Messestand', c:'interview', y:'Messe', cat:'Interview'},
-  {id:'xpKXyGP87RQ', t:'Werbefilm', s:'Event & Gastronomie', c:'image', y:'Ad', cat:'Werbung'},
-  {id:'V9-8qmLB_S8', t:'Produktvideo', s:'Kinderzimmer-Möbel', c:'image', y:'Produkt', cat:'Produkt'}
+  {id:'xpKXyGP87RQ', t:'Werbefilm', s:'Event & Gastronomie', c:'image', y:'Ad', cat:'Werbung'}
 ];
 const TESTI = [
   {id:'IW4yKVIStAE', t:'Tobias Dziuba', s:'Podcast-Produktion'},
