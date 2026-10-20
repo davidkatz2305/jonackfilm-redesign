@@ -67,7 +67,7 @@ section{position:relative}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:-.04em}
 .logo .dot{width:9px;height:9px}
-.logo span{color:var(--ink-2);font-weight:500}
+.logo b{font-weight:700}.logo span{color:var(--ink-2);font-weight:500}
 .nav-links{display:flex;gap:32px;font-size:15px;color:var(--ink-2)}
 .nav-links a{transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
@@ -91,12 +91,14 @@ body.menu-open .mmenu{opacity:1;pointer-events:auto}
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
 .hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
-  linear-gradient(180deg,rgba(11,11,10,.55) 0%,rgba(11,11,10,.15) 30%,rgba(11,11,10,.35) 58%,rgba(11,11,10,.96) 100%),
+  linear-gradient(180deg,rgba(11,11,10,.6) 0%,rgba(11,11,10,.3) 28%,rgba(11,11,10,.55) 55%,rgba(11,11,10,.97) 100%),
   radial-gradient(120% 80% at 0% 100%,rgba(11,11,10,.75),transparent 60%)}
 .hero-inner{padding-bottom:clamp(28px,4vw,48px);padding-top:140px}
 .hero h1{font-size:clamp(46px,8.6vw,138px);max-width:12.5ch;margin:22px 0 28px}
 .hero h1 .serif{color:var(--ink)}
-.hero .lead{color:rgba(243,240,234,.82);max-width:52ch}
+.hero .lead{color:rgba(243,240,234,.86);max-width:52ch}
+.hero .eyebrow{color:rgba(243,240,234,.85)}
+.hero h1,.hero .lead,.hero .eyebrow{text-shadow:0 2px 30px rgba(0,0,0,.35)}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:clamp(48px,7vw,96px)}
 .stat{padding:22px 24px 4px 0}
@@ -381,7 +383,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;color:var(--ink-2);f
 <!-- NAV -->
 <header class="nav" id="nav">
   <div class="wrap">
-    <a href="#top" class="logo" aria-label="JonackFilm Startseite"><i class="dot"></i>jonack<span>film</span></a>
+    <a href="#top" class="logo" aria-label="JonackFilm Startseite"><i class="dot"></i><b>jonack<span>film</span></b></a>
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="#arbeiten">Arbeiten</a>
       <a href="#leistungen">Leistungen</a>
@@ -786,7 +788,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 40px;color:var(--ink-2);f
   <div class="wrap">
     <div class="foot">
       <div>
-        <a href="#top" class="logo"><i class="dot"></i>jonack<span>film</span></a>
+        <a href="#top" class="logo"><i class="dot"></i><b>jonack<span>film</span></b></a>
         <p style="margin-top:16px;max-width:34ch">Videoproduktion und Fotografie aus Berlin – für Unternehmen, Agenturen und Veranstalter.</p>
       </div>
       <div><h4>Leistungen</h4><ul><li><a href="#leistungen">Imagefilm</a></li><li><a href="#leistungen">Eventvideo</a></li><li><a href="#leistungen">Werbevideo</a></li><li><a href="#fotos">Fotografie</a></li></ul></div>
